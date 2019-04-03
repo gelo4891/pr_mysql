@@ -40,9 +40,28 @@ $res = mysql_query("SELECT 'расширение mysql в новых проек�
 $row = mysql_fetch_assoc($res);
 echo $row['_msg'];
 */	
-	function My_Sql_con_li($My_Sql_li_base_site, $My_Sql_li_base_name, $My_Sql_li_base_pass, $My_Sql_li_base_conn){
-     $rez_conn=mysql_connect("my_test_base","Base_user","Base_user");
-     echo $rez_conn;
+	function My_Sql_con_li($My_Sql_li_base_site, $My_Sql_li_base_name, $My_Sql_li_base_pass, $My_Sql_li_base_conn,$My_Sql_li_query,$ob_or_func){
+     switch($ob_or_func){
+     case "1":{
+      $mysqli_rez_conn=mysqli_connect($My_Sql_li_base_site, $My_Sql_li_base_name, $My_Sql_li_base_pass, $My_Sql_li_base_conn);
+      if ($mysqli_rez_conn->connect_errno) {
+       echo "Не удалось подключиться к MySQL: " . $mysqli_rez_conn->connect_error;
+      }
+      $mysqli_rez_conn_res = mysqli_query($mysqli_rez_conn, $My_Sql_li_query);
+      /*"SELECT  `PAss` FROM `test_1_conn`"*/
+      return $mysqli_rez_conn_res;
+      /*$mysqli_rez_conn_row = mysqli_fetch_assoc($mysqli_rez_conn_res);
+      echo $mysqli_rez_conn_row['PAss'];*/
+     };
+             break;
+     case "2":{
+
+     };
+     }
+
+
+
+
 	}
 }
 ?>
