@@ -10,8 +10,8 @@
 <BODY class="ind_cl_body">
 
 <div class="ind_cl_vse">
- <form action=php/php.pass.php>
-
+ <!--<form action=php/php.pass.php>-->
+    <form action=php/php.first.conn.php>
    <div name="ind_zaglavie" class=" ind_cl_vse">
    <a class="ind_cl_zaglavie">Привіт<br>"Будемо вчитися"</a>
    </div>

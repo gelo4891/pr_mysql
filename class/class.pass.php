@@ -43,7 +43,6 @@ echo $row['_msg'];
 	function My_Sql_con_li($My_Sql_li_base_site, $My_Sql_li_base_name, $My_Sql_li_base_pass, $My_Sql_li_base_conn){
      $rez_conn=mysql_connect("my_test_base","Base_user","Base_user");
      echo $rez_conn;
-		
 	}
 }
 ?>
